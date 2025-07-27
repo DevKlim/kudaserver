@@ -1,0 +1,5 @@
+*.lock
+world/
+flatworld/
+world_nether
+world_the_end

@@ -1,0 +1,21 @@
+name: KudaTools
+version: 0.1.0
+main: com.kuda.tools.KudaTools
+api-version: '1.20'
+author: Gemini
+description: Data collection and automation tools for the ai.kuda project.
+depend: [WorldEdit]
+
+commands:
+  kuda-export:
+    description: Exports the player's current WorldEdit selection as a schematic.
+    usage: "/kuda-export <buildName> [tag1] [tag2]..."
+    permission: kudatools.export
+  kuda-process-url:
+    description: Downloads a schematic from a URL and processes it.
+    usage: "/kuda-process-url <url> <buildName> [tag1] [tag2]..."
+    permission: kudatools.process
+  kuda-process-csv:
+    description: Processes all builds listed in the build_list.csv file.
+    usage: "/kuda-process-csv"
+    permission: kudatools.process

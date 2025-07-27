@@ -1,0 +1,17 @@
+# KudaTools Configuration
+
+# Settings for automatic placement of schematics processed via /kuda-process-url
+placement:
+  # The world where schematics will be pasted.
+  world_name: "world"
+  # The starting coordinates for the grid.
+  start_x: 0
+  start_z: 0
+  # The Y-level at which to paste the schematics.
+  paste_y: 100
+  # The number of blocks to leave empty between each schematic.
+  padding: 32
+  # --- DO NOT EDIT BELOW THIS LINE ---
+  # Internal tracking for the next available coordinates.
+  next_x: 0
+  next_z: 0

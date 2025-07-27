@@ -1,0 +1,9 @@
+# This is an example CSV file for KudaTools.
+# Use this to define a list of builds to be processed by /kuda-process-csv.
+# Format: build_id,build_name,comma_separated_tags
+# The build_id will be inserted into the BuildPaste URL.
+# Lines starting with # are ignored.
+
+c2759885-1d37-4d74-b485-8f635c24e037,MyCoolTower,medieval,fantasy,tower
+c883e601-2554-469b-98b7-60e583d73539,ModernHouse,modern,house,suburban
+# 3a3b53c1-e8d9-4b6c-8f2a-7e9d1c0b3a4d,ExampleBuild,example,test
