@@ -9966,3 +9966,36 @@ Caused by: com.mojang.brigadier.exceptions.CommandSyntaxException: Block minecra
 [16:10:46] [Server thread/INFO]: cafeho issued server command: /up
 [16:10:48] [Server thread/INFO]: cafeho issued server command: /up 1
 [16:11:08] [Server thread/INFO]: cafeho issued server command: /up 5
+[16:28:07] [Server thread/INFO]: Klimkin issued server command: /kill @e
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3261, uuid='954a5bc0-9e9f-40bf-ac4e-28d41d0cb1b0', l='ServerLevel[flatworld]', x=-156.22, y=-60.00, z=72.51, cpos=[-10, 4], tl=31627, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Fletcher'/3258, uuid='d6e85ae0-a8f9-4cc2-a45a-a1f288b4f032', l='ServerLevel[flatworld]', x=113.83, y=-59.94, z=124.73, cpos=[7, 7], tl=31915, v=true] died, message: 'Fletcher was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Farmer'/3231, uuid='38b6927b-e326-4c00-849c-ed459d7c49e5', l='ServerLevel[flatworld]', x=28.30, y=-59.00, z=153.90, cpos=[1, 9], tl=31926, v=true] died, message: 'Farmer was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3252, uuid='18631dee-460e-4207-ba6c-e690d520964c', l='ServerLevel[flatworld]', x=103.64, y=-60.00, z=131.26, cpos=[6, 8], tl=31084, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3274, uuid='5f09e799-a150-486a-9bb8-0614d36bd722', l='ServerLevel[flatworld]', x=-183.26, y=-60.00, z=51.54, cpos=[-12, 3], tl=13127, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3315, uuid='55289f10-eed1-4405-b3cd-183c1c295785', l='ServerLevel[flatworld]', x=-153.23, y=-58.44, z=-163.32, cpos=[-10, -11], tl=13885, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: cafeho was killed
+[16:28:07] [Server thread/INFO]: Villager Villager['Fletcher'/3243, uuid='6acbb777-f5cd-4eb4-80fc-05f4f7a6ee65', l='ServerLevel[flatworld]', x=90.21, y=-59.00, z=141.66, cpos=[5, 8], tl=31922, v=true] died, message: 'Fletcher was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Nitwit'/3206, uuid='bb282352-aca1-42b4-a8dd-870d76bb18d6', l='ServerLevel[flatworld]', x=106.34, y=-60.06, z=147.51, cpos=[6, 9], tl=31932, v=true] died, message: 'Nitwit was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Farmer'/3251, uuid='4d4a8c77-48e9-43f4-8783-9c8b521273e3', l='ServerLevel[flatworld]', x=145.43, y=-60.00, z=160.61, cpos=[9, 10], tl=24398, v=true] died, message: 'Farmer was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3226, uuid='5cd31bc9-d114-48e5-b4f5-72e8b51c133a', l='ServerLevel[flatworld]', x=-126.71, y=-60.00, z=88.71, cpos=[-8, 5], tl=31866, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3270, uuid='9844526a-3c7f-4c4f-96a4-3344e3ca13dc', l='ServerLevel[flatworld]', x=-186.23, y=-60.00, z=75.35, cpos=[-12, 4], tl=12863, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3244, uuid='1453f509-04f0-4055-b626-3c9029b0e0a8', l='ServerLevel[flatworld]', x=76.32, y=-60.00, z=159.53, cpos=[4, 9], tl=31922, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3289, uuid='b49bfc6f-06e3-485e-9a5e-527a38a89aed', l='ServerLevel[flatworld]', x=159.24, y=-58.00, z=134.52, cpos=[9, 8], tl=10161, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3205, uuid='c06f6c4c-4a01-464a-b0a3-50ca49390626', l='ServerLevel[flatworld]', x=-123.24, y=-58.00, z=63.48, cpos=[-8, 3], tl=31932, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Farmer'/3230, uuid='92895aef-309d-4210-ac30-13b1788f8e3c', l='ServerLevel[flatworld]', x=56.43, y=-59.00, z=153.52, cpos=[3, 9], tl=31926, v=true] died, message: 'Farmer was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3255, uuid='7e31da75-d05c-4343-b376-b821d6cc90cd', l='ServerLevel[flatworld]', x=77.92, y=-56.00, z=143.50, cpos=[4, 8], tl=23659, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Nitwit'/3209, uuid='0fa36b44-7998-4b62-9f95-0f02e432eb05', l='ServerLevel[flatworld]', x=101.83, y=-60.00, z=139.12, cpos=[6, 8], tl=31933, v=true] died, message: 'Nitwit was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3210, uuid='ee8b928f-0230-471f-afac-501f2125a92a', l='ServerLevel[flatworld]', x=103.79, y=-60.06, z=132.11, cpos=[6, 8], tl=31933, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Mason'/3225, uuid='314bd733-e76d-49c1-9e59-00ebbdb8d9ed', l='ServerLevel[flatworld]', x=-131.49, y=-59.00, z=59.79, cpos=[-9, 3], tl=31771, v=true] died, message: 'Mason was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3269, uuid='295a89bf-cfcc-40c7-9f39-3593a02df303', l='ServerLevel[flatworld]', x=-186.31, y=-60.06, z=76.45, cpos=[-12, 4], tl=23887, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Villager Villager['Villager'/3254, uuid='3ad62686-3aaf-4358-bfa2-604b3101745a', l='ServerLevel[flatworld]', x=100.36, y=-60.00, z=139.51, cpos=[6, 8], tl=31084, v=true] died, message: 'Villager was killed'
+[16:28:07] [Server thread/INFO]: Klimkin was killed
+[16:28:07] [Server thread/INFO]: Villager Villager['Butcher'/3249, uuid='e69eea26-0c92-4d0a-a30b-b6df142b33ab', l='ServerLevel[flatworld]', x=-170.40, y=-56.00, z=90.84, cpos=[-11, 5], tl=31748, v=true] died, message: 'Butcher was killed'
+[16:28:07] [Server thread/INFO]: [Klimkin: Killed 116 entities]
+[16:28:18] [Server thread/INFO]: Klimkin issued server command: /gamerule keepInventory
+[16:28:21] [Server thread/INFO]: Klimkin issued server command: /gamerule keepInventory true
+[16:28:21] [Server thread/INFO]: [Klimkin: Gamerule keepInventory is now set to: true]
+[16:53:31] [Server thread/INFO]: cafeho lost connection: Disconnected
+[16:53:31] [Server thread/INFO]: cafeho left the game
+[16:59:33] [Server thread/INFO]: Klimkin lost connection: Disconnected
+[16:59:33] [Server thread/INFO]: Klimkin left the game
