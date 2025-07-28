@@ -203,7 +203,7 @@ public class ExportCommand implements CommandExecutor {
             );
             Operations.complete(copy);
 
-            try (ClipboardWriter writer = BuiltInClipboardFormat.SPONGE_SCHEMATIC.getWriter(new FileOutputStream(schematicFile))) {
+            try (ClipboardWriter writer = BuiltInClipboardFormat.MINECRAFT_STRUCTURE.getWriter(new FileOutputStream(nbtFile))) {
                 writer.write(clipboard);
             }
 
@@ -225,6 +225,7 @@ public class ExportCommand implements CommandExecutor {
                 "  \"tags\": [%s],\n" +
                 "  \"timestamp\": \"%s\",\n" +
                 "  \"source\": \"player-submission\",\n" +
+                "  \"worldName\": \"%s\",\n" +
                 "  \"dimensions\": {\n" +
                 "    \"x\": %d,\n" +
                 "    \"y\": %d,\n" +
@@ -244,6 +245,7 @@ public class ExportCommand implements CommandExecutor {
                 player.getUniqueId().toString(),
                 tags.stream().map(t -> "\"" + t + "\"").collect(Collectors.joining(", ")),
                 new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(new Date()),
+                worldName,
                 dimensions.getX(),
                 dimensions.getY(),
                 dimensions.getZ(),
