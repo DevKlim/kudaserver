@@ -1,0 +1,16 @@
+{
+  "buildName": "trollegehouse",
+  "author": {
+    "name": "cafeho",
+    "uuid": "b06d8d1c-269c-4bb8-8434-7354a8b920df"
+  },
+  "tags": ["medieval,tower"],
+  "timestamp": "2025-07-27T20:28:37Z",
+  "source": "player-submission",
+  "dimensions": {
+    "x": 16,
+    "y": 28,
+    "z": 17
+  },
+  "filePath": "plugins/KudaTools/exported_builds/trollegehouse/trollegehouse.schem"
+}

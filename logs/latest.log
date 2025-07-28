@@ -1,74 +1,70 @@
-[18:23:04] [ServerMain/INFO]: [bootstrap] Running Java 24 (Java HotSpot(TM) 64-Bit Server VM 24.0.2+12-54; Oracle Corporation null) on Windows 11 10.0 (amd64)
-[18:23:04] [ServerMain/INFO]: [bootstrap] Loading Purpur 1.21.8-2481-HEAD@8de15d6 (2025-07-21T01:00:28Z) for Minecraft 1.21.8
-[18:23:05] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
-[18:23:05] [ServerMain/INFO]: [PluginInitializerManager] Initialized 4 plugins
-[18:23:05] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (4):
+[20:38:38] [ServerMain/INFO]: [bootstrap] Running Java 24 (Java HotSpot(TM) 64-Bit Server VM 24.0.2+12-54; Oracle Corporation null) on Windows 11 10.0 (amd64)
+[20:38:38] [ServerMain/INFO]: [bootstrap] Loading Purpur 1.21.8-2481-HEAD@8de15d6 (2025-07-21T01:00:28Z) for Minecraft 1.21.8
+[20:38:38] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[20:38:38] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\kudatools-0.1.0-SNAPSHOT.jar'...
+[20:38:39] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\kudatools-0.1.0-SNAPSHOT.jar' in 275ms.
+[20:38:39] [ServerMain/INFO]: [PluginInitializerManager] Initialized 4 plugins
+[20:38:39] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (4):
  - BuildPaste (1.11.1), KudaTools (0.1.0), Multiverse-Core (5.1.1), WorldEdit (7.3.16+cbf4bd5)
-[18:23:08] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[18:23:10] [ServerMain/INFO]: Loaded 1407 recipes
-[18:23:10] [ServerMain/INFO]: Loaded 1520 advancements
-[18:23:10] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
-[18:23:10] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 226.7ms
-[18:23:10] [Server thread/INFO]: Starting minecraft server version 1.21.8
-[18:23:10] [Server thread/INFO]: Loading properties
-[18:23:10] [Server thread/INFO]: This server is running Purpur version 1.21.8-2481-HEAD@8de15d6 (2025-07-21T01:00:28Z) (Implementing API version 1.21.8-R0.1-SNAPSHOT)
-[18:23:10] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
-[18:23:10] [Server thread/INFO]: Using 4 threads for Netty based IO
-[18:23:10] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[18:23:11] [Server thread/INFO]: [MoonriseCommon] Paper is using 4 worker threads, 1 I/O threads
-[18:23:11] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using population gen parallelism: true
-[18:23:11] [Server thread/INFO]: Default game type: SURVIVAL
-[18:23:11] [Server thread/INFO]: Generating keypair
-[18:23:11] [Server thread/INFO]: Starting Minecraft server on *:25565
-[18:23:11] [Server thread/INFO]: Using default channel type
-[18:23:11] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[18:23:11] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[18:23:11] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.16+cbf4bd5
-[18:23:12] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@45d477b2]
-[18:23:12] [Server thread/INFO]: [CoreLogging] Loading server plugin Multiverse-Core v5.1.1
-[18:23:12] [Server thread/INFO]: [KudaTools] Loading server plugin KudaTools v0.1.0
-[18:23:12] [Server thread/INFO]: [BuildPaste] Loading server plugin BuildPaste v1.11.1
-[18:23:12] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[18:23:12] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.16+cbf4bd5
-[18:23:12] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[18:23:12] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[18:23:12] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_21_6.PaperweightAdapter as the Bukkit adapter
-[18:23:13] [Server thread/INFO]: Preparing level "world"
-[18:23:14] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[18:23:14] [Server thread/INFO]: Preparing spawn area: 0%
-[18:23:14] [Server thread/INFO]: Preparing spawn area: 2%
-[18:23:15] [Server thread/INFO]: Time elapsed: 685 ms
-[18:23:15] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[18:23:15] [Server thread/INFO]: Preparing spawn area: 0%
-[18:23:15] [Server thread/INFO]: Time elapsed: 53 ms
-[18:23:15] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[18:23:15] [Server thread/INFO]: Preparing spawn area: 0%
-[18:23:15] [Server thread/INFO]: Time elapsed: 36 ms
-[18:23:15] [Server thread/INFO]: [Multiverse-Core] Enabling Multiverse-Core v5.1.1
-[18:23:15] [Server thread/INFO]: Preparing start region for dimension minecraft:flatworld
-[18:23:15] [Server thread/INFO]: Preparing spawn area: 0%
-[18:23:15] [Server thread/INFO]: Time elapsed: 68 ms
-[18:23:15] [Server thread/INFO]: [Multiverse-Core] API service loaded!
-[18:23:15] [Server thread/INFO]: [Multiverse-Core] Version 5.1.1 (API v5.1) Enabled - By dumptruckman, Rigby, fernferret, lithium3141, main--, benwoo1110 and Zax71
-[18:23:15] [Server thread/INFO]: [Multiverse-Core] Loving Multiverse-Core? Please consider supporting the project with a small donation: https://github.com/sponsors/Multiverse
-[18:23:15] [Server thread/INFO]: [KudaTools] Enabling KudaTools v0.1.0
-[18:23:15] [Server thread/INFO]: [KudaTools] KudaTools has been enabled!
-[18:23:15] [Server thread/INFO]: [KudaTools] KudaTools is ready.
-[18:23:15] [Server thread/INFO]: [BuildPaste] Enabling BuildPaste v1.11.1
-[18:23:16] [Server thread/INFO]: [spark] Starting background profiler...
-[18:23:16] [Server thread/INFO]: [spark] The async-profiler engine is not supported for your os/arch (windows11/amd64), so the built-in Java engine will be used instead.
-[18:23:16] [Server thread/INFO]: Done preparing level "world" (2.827s)
-[18:23:16] [Server thread/INFO]: Running delayed init tasks
-[18:23:16] [Server thread/INFO]: Done (12.611s)! For help, type "help"
-[18:23:26] [User Authenticator #0/INFO]: UUID of player cafeho is b06d8d1c-269c-4bb8-8434-7354a8b920df
-[18:23:26] [Server thread/INFO]: cafeho joined the game
-[18:23:26] [Server thread/INFO]: cafeho[/25.53.13.14:51771] logged in with entity id 113 at ([flatworld]-33.459728921784745, -41.50609251977052, 45.237064424136)
-[18:23:32] [Server thread/INFO]: cafeho issued server command: /gamemode creative
-[18:23:32] [Server thread/INFO]: [cafeho: Set own game mode to Creative Mode]
-[18:23:39] [Server thread/INFO]: cafeho issued server command: //wand
-[18:24:00] [Server thread/INFO]: cafeho issued server command: /up 20
-[18:24:10] [Server thread/INFO]: cafeho issued server command: /up 30
-[18:24:34] [Server thread/INFO]: cafeho issued server command: /help
-[18:24:37] [Server thread/INFO]: cafeho issued server command: /help KudaTools
-[18:24:44] [Server thread/INFO]: cafeho issued server command: /kuda-export
-[18:25:02] [Server thread/INFO]: cafeho issued server command: /kuda-export testHouse medeival, gay
+[20:38:42] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[20:38:44] [ServerMain/INFO]: Loaded 1407 recipes
+[20:38:44] [ServerMain/INFO]: Loaded 1520 advancements
+[20:38:44] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[20:38:44] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 220.7ms
+[20:38:44] [Server thread/INFO]: Starting minecraft server version 1.21.8
+[20:38:44] [Server thread/INFO]: Loading properties
+[20:38:44] [Server thread/INFO]: This server is running Purpur version 1.21.8-2481-HEAD@8de15d6 (2025-07-21T01:00:28Z) (Implementing API version 1.21.8-R0.1-SNAPSHOT)
+[20:38:44] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[20:38:44] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[20:38:44] [Server thread/INFO]: Using 4 threads for Netty based IO
+[20:38:44] [Server thread/INFO]: [MoonriseCommon] Paper is using 4 worker threads, 1 I/O threads
+[20:38:44] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using population gen parallelism: true
+[20:38:45] [Server thread/INFO]: Default game type: SURVIVAL
+[20:38:45] [Server thread/INFO]: Generating keypair
+[20:38:45] [Server thread/INFO]: Starting Minecraft server on *:25565
+[20:38:45] [Server thread/INFO]: Using default channel type
+[20:38:45] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[20:38:45] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[20:38:45] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.16+cbf4bd5
+[20:38:45] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@bbad16]
+[20:38:45] [Server thread/INFO]: [CoreLogging] Loading server plugin Multiverse-Core v5.1.1
+[20:38:45] [Server thread/INFO]: [KudaTools] Loading server plugin KudaTools v0.1.0
+[20:38:45] [Server thread/INFO]: [BuildPaste] Loading server plugin BuildPaste v1.11.1
+[20:38:45] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[20:38:45] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.16+cbf4bd5
+[20:38:45] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[20:38:45] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[20:38:46] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_21_6.PaperweightAdapter as the Bukkit adapter
+[20:38:46] [Server thread/INFO]: Preparing level "world"
+[20:38:47] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[20:38:47] [Server thread/INFO]: Preparing spawn area: 0%
+[20:38:48] [Server thread/INFO]: Preparing spawn area: 2%
+[20:38:48] [Server thread/INFO]: Time elapsed: 661 ms
+[20:38:48] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[20:38:48] [Server thread/INFO]: Preparing spawn area: 0%
+[20:38:48] [Server thread/INFO]: Time elapsed: 45 ms
+[20:38:48] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[20:38:48] [Server thread/INFO]: Preparing spawn area: 0%
+[20:38:48] [Server thread/INFO]: Time elapsed: 39 ms
+[20:38:48] [Server thread/INFO]: [Multiverse-Core] Enabling Multiverse-Core v5.1.1
+[20:38:49] [Server thread/INFO]: Preparing start region for dimension minecraft:flatworld
+[20:38:49] [Server thread/INFO]: Preparing spawn area: 0%
+[20:38:49] [Server thread/INFO]: Time elapsed: 55 ms
+[20:38:49] [Server thread/INFO]: [Multiverse-Core] API service loaded!
+[20:38:49] [Server thread/INFO]: [Multiverse-Core] Version 5.1.1 (API v5.1) Enabled - By dumptruckman, Rigby, fernferret, lithium3141, main--, benwoo1110 and Zax71
+[20:38:49] [Server thread/INFO]: [Multiverse-Core] Loving Multiverse-Core? Please consider supporting the project with a small donation: https://github.com/sponsors/Multiverse
+[20:38:49] [Server thread/INFO]: [KudaTools] Enabling KudaTools v0.1.0
+[20:38:49] [Server thread/WARN]: [KudaTools] Could not save build_list.csv to plugins\KudaTools\build_list.csv because build_list.csv already exists.
+[20:38:49] [Server thread/INFO]: [KudaTools] KudaTools has been enabled successfully.
+[20:38:49] [Server thread/INFO]: [BuildPaste] Enabling BuildPaste v1.11.1
+[20:38:49] [Server thread/INFO]: [spark] Starting background profiler...
+[20:38:49] [Server thread/INFO]: [spark] The async-profiler engine is not supported for your os/arch (windows11/amd64), so the built-in Java engine will be used instead.
+[20:38:49] [Server thread/INFO]: Done preparing level "world" (2.780s)
+[20:38:49] [Server thread/INFO]: Running delayed init tasks
+[20:38:49] [Server thread/INFO]: Done (12.165s)! For help, type "help"
+[20:38:56] [User Authenticator #0/INFO]: UUID of player cafeho is b06d8d1c-269c-4bb8-8434-7354a8b920df
+[20:38:56] [Server thread/INFO]: cafeho joined the game
+[20:38:56] [Server thread/INFO]: cafeho[/25.53.13.14:57458] logged in with entity id 113 at ([flatworld]-16.51249998807907, -49.5, 33.88851808928805)
+[20:39:02] [Server thread/INFO]: cafeho issued server command: /gamemode creative
+[20:39:02] [Server thread/INFO]: [cafeho: Set own game mode to Creative Mode]
+[20:39:22] [Server thread/INFO]: cafeho issued server command: /kuda-export testHouse5 med,h

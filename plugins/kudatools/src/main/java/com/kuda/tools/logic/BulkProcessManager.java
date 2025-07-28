@@ -15,6 +15,7 @@ public class BulkProcessManager {
 
     private final KudaTools plugin;
     private final SchematicProcessor schematicProcessor;
+    private BukkitRunnable currentTask;
 
     public BulkProcessManager(KudaTools plugin) {
         this.plugin = plugin;
@@ -22,7 +23,7 @@ public class BulkProcessManager {
     }
 
     public void startBulkProcess(CommandSender sender) {
-        new BukkitRunnable() {
+        currentTask = new BukkitRunnable() {
             @Override
             public void run() {
                 File csvFile = new File(plugin.getDataFolder().getParent(), "kudatools/build_list.csv");
@@ -34,6 +35,11 @@ public class BulkProcessManager {
                 try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))) {
                     String line;
                     while ((line = reader.readLine()) != null) {
+                        if (isCancelled()) {
+                            sender.sendMessage("Bulk processing was cancelled.");
+                            return;
+                        }
+                        
                         if (line.startsWith("#") || line.trim().isEmpty()) {
                             continue;
                         }
@@ -58,6 +64,13 @@ public class BulkProcessManager {
                     e.printStackTrace();
                 }
             }
-        }.runTaskAsynchronously(plugin);
+        };
+        currentTask.runTaskAsynchronously(plugin);
+    }
+
+    public void stopProcessing() {
+        if (currentTask != null && !currentTask.isCancelled()) {
+            currentTask.cancel();
+        }
     }
 }
