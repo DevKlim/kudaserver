@@ -27,7 +27,9 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ExportCommand implements CommandExecutor {
@@ -68,12 +70,17 @@ public class ExportCommand implements CommandExecutor {
             Region selection = localSession.getSelection(localSession.getSelectionWorld());
 
             // --- Define output directory and file paths ---
-            File outputDir = new File(plugin.getDataFolder(), "exported_builds/" + sanitizedBuildName);
-            if (!outputDir.exists()) {
-                outputDir.mkdirs();
+            File nbtOutputDir = new File(plugin.getDataFolder(), "exported_builds/nbt" + sanitizedBuildName);
+            File jsonOutputDir = new File(plugin.getDataFolder(), "exported_builds/json" + sanitizedBuildName);
+            
+            if (!jsonOutputDir.exists()) {
+                jsonOutputDir.mkdirs();
             }
-            File schematicFile = new File(outputDir, sanitizedBuildName + ".schem");
-            File metadataFile = new File(outputDir, "metadata.json");
+            if (!nbtOutputDir.exists()) {
+                nbtOutputDir.mkdirs();
+            }
+            File nbtFile = new File(nbtOutputDir, sanitizedBuildName + ".nbt");
+            File metadataFile = new File(jsonOutputDir, "metadata.json");
 
             // --- Create and save the schematic ---
             BlockArrayClipboard clipboard = new BlockArrayClipboard(selection);
@@ -84,12 +91,67 @@ public class ExportCommand implements CommandExecutor {
             );
             Operations.complete(copy);
 
-            try (ClipboardWriter writer = BuiltInClipboardFormat.SPONGE_SCHEMATIC.getWriter(new FileOutputStream(schematicFile))) {
+            try (ClipboardWriter writer = BuiltInClipboardFormat.MINECRAFT_STRUCTURE.getWriter(new FileOutputStream(nbtFile))) {
                 writer.write(clipboard);
             }
 
+            Map<String,Integer> blockPalette = new HashMap<>();
+            for (BlockVector3 pt : selection) {
+                // Get the block state from the clipboard at the given point
+                String blockId = clipboard.getBlock(pt).getBlockType().getId();
+                // Add the block ID to the map, incrementing its count
+                blockPalette.put(blockId, blockPalette.getOrDefault(blockId, 0) + 1);
+            }
+             // Format the block palette map into a JSON string ---
+             String paletteJsonString = blockPalette.entrySet().stream()
+             .map(entry -> String.format("    \"%s\": %d", entry.getKey(), entry.getValue()))
+             .collect(Collectors.joining(",\n"));
+
+            // --- NEW: Find all entities within the selection ---
+            org.bukkit.World bukkitWorld = player.getWorld();
+            List<org.bukkit.entity.Entity> entitiesInRegion = bukkitWorld.getEntities().stream()
+                .filter(entity -> !(entity instanceof Player)) // Exclude players
+                .filter(entity -> selection.contains(BukkitAdapter.asBlockVector(entity.getLocation())))
+                .collect(Collectors.toList());
+            // --- NEW: Convert entity list to a JSON array string ---
+            String entitiesJsonString = entitiesInRegion.stream()
+                .map(entity -> {
+                    String customNameJson = "";
+                    if (entity.getCustomName() != null && !entity.getCustomName().isEmpty()) {
+                        // Escape quotes for JSON compatibility
+                        String escapedName = entity.getCustomName().replace("\"", "\\\"");
+                        customNameJson = String.format(",\n      \"customName\": \"%s\"", escapedName);
+                    }
+                    return String.format(
+                        "    {\n" +
+                        "      \"type\": \"%s\",\n" +
+                        "      \"uuid\": \"%s\",\n" +
+                        "      \"location\": {\"x\": %f, \"y\": %f, \"z\": %f}%s\n" +
+                        "    }",
+                        entity.getType().name(),
+                        entity.getUniqueId().toString(),
+                        entity.getLocation().getX(),
+                        entity.getLocation().getY(),
+                        entity.getLocation().getZ(),
+                        customNameJson
+                    );
+                })
+                .collect(Collectors.joining(",\n", "[\n", "\n  ]"));
+            
+            if (entitiesInRegion.isEmpty()) {
+                entitiesJsonString = "[]";
+            }
+
+
             // --- Create and save the metadata.json ---
             BlockVector3 dimensions = BlockVector3.at(selection.getWidth(), selection.getHeight(), selection.getLength());
+            String worldName = selection.getWorld().getName();
+            BlockVector3 minPoint = selection.getMinimumPoint();
+            BlockVector3 maxPoint = selection.getMaximumPoint();
+            int minChunkX = minPoint.getBlockX() >> 4;
+            int minChunkZ = minPoint.getBlockZ() >> 4;
+            int maxChunkX = maxPoint.getBlockX() >> 4;
+            int maxChunkZ = maxPoint.getBlockZ() >> 4;
             String metadataJson = String.format(
                 "{\n" +
                 "  \"buildName\": \"%s\",\n" +
@@ -100,22 +162,38 @@ public class ExportCommand implements CommandExecutor {
                 "  \"tags\": [%s],\n" +
                 "  \"timestamp\": \"%s\",\n" +
                 "  \"source\": \"player-submission\",\n" +
+                "  \"worldName\": \"%s\",\n" +
                 "  \"dimensions\": {\n" +
                 "    \"x\": %d,\n" +
                 "    \"y\": %d,\n" +
                 "    \"z\": %d\n" +
                 "  },\n" +
-                "  \"filePath\": \"%s\"\n" +
+                "  \"jsonLocation\": \"%s\",\n" +
+                "  \"nbtLocation\": \"%s\",\n" +
+                "  \"blockPalette\": {\n%s\n  },\n" +
+                "  \"entities\": %s,\n" +
+                "  \"chunks\": {\n" +
+                "    \"min\": {\"x\": %d, \"z\": %d},\n" +
+                "    \"max\": {\"x\": %d, \"z\": %d}\n" +
+                "  }\n" +
                 "}",
                 sanitizedBuildName,
                 player.getName(),
                 player.getUniqueId().toString(),
                 tags.stream().map(t -> "\"" + t + "\"").collect(Collectors.joining(", ")),
                 new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(new Date()),
+                worldName,
                 dimensions.getX(),
                 dimensions.getY(),
                 dimensions.getZ(),
-                schematicFile.getPath().replace("\\", "/")
+                metadataFile.getPath().replace("\\", "/"),
+                nbtFile.getPath().replace("\\", "/"),
+                paletteJsonString,
+                entitiesJsonString,
+                minChunkX,
+                minChunkZ,
+                maxChunkX,
+                maxChunkZ
             );
 
             try (FileWriter fileWriter = new FileWriter(metadataFile)) {
@@ -123,7 +201,7 @@ public class ExportCommand implements CommandExecutor {
             }
 
             player.sendMessage(ChatColor.GREEN + "Successfully exported '" + sanitizedBuildName + "'!");
-            player.sendMessage(ChatColor.GRAY + "Saved to: " + schematicFile.getPath());
+            player.sendMessage(ChatColor.GRAY + "Saved to: " + nbtFile.getPath());
 
         } catch (IncompleteRegionException e) {
             player.sendMessage(ChatColor.RED + "Your WorldEdit selection is incomplete. Please select two points.");
